@@ -1,19 +1,18 @@
 import pymysql
 from pymysql import Error
-import os
-from 
+
 
 class Database:
     def __init__(self):
         self.connection = None
         try:
             self.connection = pymysql.connect(
-                host='localhost',
-                # host='mariadb',  # cloudtype 사용 시
-                # port=3306,   # cloudtype 사용 시
+                #host='localhost',
+                host='svc.sel3.cloudtype.app',  # cloudtype 사용 시
+                port=31507,   # cloudtype 사용 시
                 database='test',  # test 데이터베이스 사용
                 user='root',
-                password='godisgood',  # mariadb 설치 당시의 패스워드, 실제 환경에서는 보안을 위해 환경변수 등을 사용
+                password='tlaghk1!',  # mariadb 설치 당시의 패스워드, 실제 환경에서는 보안을 위해 환경변수 등을 사용
                 charset='utf8mb4',
                 cursorclass=pymysql.cursors.DictCursor   # 쿼리 결과를 딕셔너리로 변환
             )
