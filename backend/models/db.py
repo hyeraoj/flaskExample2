@@ -14,7 +14,7 @@ class Database:
         try:
             self.connection = pymysql.connect(
                 host=os.getenv("DB_HOST", 'localhost'),     # 환경변수에서 호스트 가져오기
-                port=os.getenv("DB_PORT", 3306),            # 환경변수에서 포트 가져오기, 기본값은 3306
+                port=int(os.getenv("DB_PORT", 3306)),       # 환경변수에서 포트 가져오기, 기본값은 3306
                 database=os.getenv("DB_NAME", 'test'),      # 환경변수에서 데이터베이스 이름 가져오기
                 user=os.getenv ("DB_USER", 'root'),         # 환경변수에서 사용자 이름 가져오기
                 password=os.getenv("DB_PASSWORD"),          # 환경변수에서 패스워드 가져오기

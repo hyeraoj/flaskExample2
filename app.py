@@ -1,7 +1,7 @@
 # 사전 설치 : pip install flask pymysql requests
 from flask import Flask, render_template, request, redirect, url_for
-from bmi import BMICalculator
-from db import Database
+from backend.services.bmi import BMICalculator
+from backend.models.db import Database
 import atexit   # 애플리케이션 종료시 실행을 요청 (ex. DB연결 종료)
 
 app = Flask(__name__)   # Flask 앱 초기화
